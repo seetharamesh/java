@@ -33,7 +33,7 @@ public class WK1_HW2 {
 		Collections.copy(arrList2, arrList1);	
 		System.out.println("Copying the original array list to new ArrayList: " + arrList2);
 		System.out.println("**************************************************************");
-		//extracting portion from arrayList. start index(inclusive)
+		//extracting portion from arrayList. start index(inclusive),end index(exclusive)
 		ArrayList<String> arrList3 = new ArrayList<String>(
 				Arrays.asList("one","two","three","four","five","six"));
 		System.out.println("Given array is: " + arrList3);
