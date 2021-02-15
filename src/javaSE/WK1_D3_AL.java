@@ -7,19 +7,20 @@ public class WK1_D3_AL {
 		Customer c1 = new Customer(1000,"John Abraham");
 		c1.setDiscount(1.5689f);
 		//System.out.println(c1.getDiscount());
-		System.out.printf("%s has customer id of %d and gets a discount of %.2f %n", c1.getName(),c1.getId(),c1.getDiscount());
+		System.out.printf("%s gets a discount of %.2f %n", c1.toString(),c1.getDiscount());
 		
 		Customer c2 = new Customer(2000,"Brian Long");
 		c2.setDiscount(2.68976f);
-		System.out.printf("%s has customer id of %d and gets a discount of %.2f %n", c2.getName(),c2.getId(),c2.getDiscount());
+		System.out.printf("%s gets a discount of %.2f %n", c2.toString(),c2.getDiscount());
 		
 		Customer c3 = new Customer(3000,"Lesley Heights");
 		c3.setDiscount(0.00007f);
-		System.out.printf("%s has customer id of %d and gets a discount of %.2f %n", c3.getName(),c3.getId(),c3.getDiscount());
+		System.out.printf("%s gets a discount of %.2f %n", c3.toString() ,c3.getDiscount());
 		System.out.println("**************************************************************************");
 		JsonData j1 = new JsonData(1,"Zared","Kellet","zKellet@google.com.hk","gender-fluid","Human Resources","Media Manager IT");
-		System.out.println(j1.id + "\n"+ j1.fname +" "+ j1.lname + "\n" + j1.email + "\n" + j1.gender + "\n" + j1.department + "\n" + j1.title);
+		System.out.println(j1.toString());
 		System.out.println("**************************************************************************");
+		//printing in another format without toString();
 		JsonData j2 = new JsonData(2,"Helena","Light Browne","hlightbowne1@joomla.org","Female","Business Development","Engineer IV");
 		System.out.println(j2.id + "\n"+ j2.fname +" "+ j2.lname + "\n" + j2.email + "\n" + j2.gender + "\n" + j2.department + "\n" + j2.title);
 
@@ -51,6 +52,11 @@ class Customer{
 	public void setDiscount(float discount) {
 		this.discount = discount;
 	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + "]";
+	}
+	
 }
 
 class JsonData{
@@ -70,4 +76,10 @@ class JsonData{
 		this.department = department;
 		this.title = title;
 	}
+	@Override
+	public String toString() {
+		return "JsonData [id=" + id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", gender="
+				+ gender + ", department=" + department + ", title=" + title + "]";
+	}
+
 }
