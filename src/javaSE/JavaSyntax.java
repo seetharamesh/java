@@ -2,7 +2,7 @@ package javaSE;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+//testing advjava branch if the changes gets into that branch instead of main branch
 public class JavaSyntax {
 
 	public static void main(String[] args) {
