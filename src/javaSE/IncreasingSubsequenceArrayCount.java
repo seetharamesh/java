@@ -56,7 +56,7 @@ public class IncreasingSubsequenceArrayCount {
 	}
 
 	public static void main(String[] args) {
-		int[] num = {4,6,7,7};
+		int[] num = {4,4,3,2,1};
 		int len = num.length;
 		while(len > 2) {
 		List<Integer> larr = Arrays.stream(num).boxed().collect(Collectors.toList());
