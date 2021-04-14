@@ -2,6 +2,29 @@ package javaSE;
 
 public class SinglyLinkedList{
 	
+	private static class Node { //inner class and it will be accessed only by SinglyLinkedClass.
+		//data, next node to point to
+		private int data;
+		private Node next;
+		
+		//constructor
+		
+		private Node(int data, Node next){
+			this.data = data;
+			this.next = next;
+		}
+		
+		//constructor
+		private Node(int data){
+			this(data,null); //will call the above constructor with "null" node
+		}
+		
+		//to print the linked list
+		public String toString() {
+			return Integer.toString(data);
+		}		
+	}//end of Node class
+	
 	//add a node to FRONT of the linked list
 	private Node head; 
 	public void addToFront(int data) {
@@ -64,35 +87,14 @@ public class SinglyLinkedList{
 		}		
 	}
 	
-	private static class Node { //inner class and it will be accessed only by SinglyLinkedClass.
-		//data, next node to point to
-		private int data;
-		private Node next;
-		
-		//constructor
-		
-		private Node(int data, Node next){
-			this.data = data;
-			this.next = next;
-		}
-		
-		//constructor
-		private Node(int data){
-			this(data,null); //will call the above constructor with "null" node
-		}
-		
-		//to print the linked list
-		public String toString() {
-			return Integer.toString(data);
-		}		
-	}
 }//end of SinglyLinkedList class
 
 
 
-//Note the below code is for generic singly linked list class that's applicable to any datatype
+//Note the below code is for generic singly linked list class that's applicable to any datatype. 
 /*
- public class GenericSinglyLinkedList<T>{
+ 
+ public class GenericSinglyLinkedList<T> {
 	
 	private static class Node<T>{
 		private T data;
@@ -109,3 +111,38 @@ public class SinglyLinkedList{
 	}
 }//end of generic class
 **/
+
+/* Iterable linked lists
+ * 
+ import java.util.Iterator;
+ public class LinkedList<T> implements Iterable{
+ 
+ private class LLIterator implements Iterator<T> {
+ 	private Node<T> curr;
+ 	LLIterator(){
+ 		curr = head;
+ }
+ 
+ public boolean hasNext(){
+ return curr != null;
+ }
+ 
+ public T next(){
+ 	if(hasNext()){
+ 		T temp = curr.data;
+ 		curr = curr.next;
+ 		return temp;
+ 		}
+ 	return null;
+ 	}
+ }
+ 
+ public Iterator<T> iterator(){
+ return new LLIterator<>();
+ }
+ 
+ 
+ 
+ }
+ 
+ * */
