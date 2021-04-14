@@ -44,11 +44,12 @@ public class CreateLinkedList {
 	        System.out.println();  
 	    }  
 	 
+	
 	public static void main(String[] args) {
 		CreateLinkedList cl = new CreateLinkedList();
 		cl.addNodeToFront(1);
 		cl.display();
-		cl.addNodeToFront(2);
+		cl.addNodeToFront(1);
 		cl.display();
 		cl.addNodeToFront(3);
 		cl.display();
