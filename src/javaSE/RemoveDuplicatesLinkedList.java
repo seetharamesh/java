@@ -35,14 +35,33 @@ public class RemoveDuplicatesLinkedList {
 	            System.out.println("List is empty");  
 	            return;  
 	        }  
-	        System.out.println("Adding nodes to the start of the list: ");  
+	        System.out.println("The linked list looks like this now: ");  
 	        while(current != null) {  
 	            //Prints each node by incrementing pointer  
 	            System.out.print(current.value + " ");  
 	            current = current.next;  
 	        }  
 	        System.out.println();  
-	    }  
+	    }
+	 
+	 public void removeNode(int value) {
+		 if(head == null) return;
+		 Node current = head;
+		 boolean removedFlag = false;
+		 while(current.next != null) {
+			 if(current == head && current.value == value) {
+				 head = current.next;
+				 current = current.next;
+				 removedFlag = true;
+			 }
+			 else if(current.next.value == value){
+				 current.next = current.next.next;
+				 removedFlag = true;
+			 }
+			 else current = current.next;
+		 }
+		 if(!removedFlag) System.out.println("The node is not found to be removed from the list");	 
+	 }
 	 
 	 public void removeDuplicates() {
 		 Node current = head, index = null, temp = null;
@@ -87,9 +106,16 @@ public class RemoveDuplicatesLinkedList {
 		cl.display();
 		cl.addNodeToFront(4);
 		cl.display();
-		
+		cl.addNodeToFront(5);
+		cl.display();
+	
 		//call removeDuplicates method
+		System.out.println("Removing duplicates using removeDuplicates method");
 		cl.removeDuplicates();
+		cl.display();
+		
+		System.out.println("Removing node 3 from the list using removeNode method");
+		cl.removeNode(3);
 		cl.display();
 		
 	}
