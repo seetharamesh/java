@@ -9,23 +9,21 @@ public class FibonacciRecursion {
 		 n3=0;
 }
 	
-	static int fibonacci(int n) {	
-		if(n == 0 || n == 1) return n;
-		else
-//			if(n > 0) {	
+	static void fibonacci(int n) {	
+		if(n == 0 || n == 1) return;
+			if(n > 0) {	
 			//System.out.print(n1 + " " + n2 + " ");
 
-//			n3 = n1 + n2;
-//			n1=n2;
-//			n2=n3;
-//			n--;
-			//System.out.println(n3);
-			n3 = fibonacci(n-1) + fibonacci(n-2);
-			return n3;			
-//		}
-//		else {
-//			return 0;
-//		}
+			n3 = n1 + n2;
+			n1=n2;
+			n2=n3;
+			
+			System.out.println(n3);
+			//n3 = fibonacci(n-1) + fibonacci(n-2);
+			fibonacci(n-1);
+			
+					
+		}
 				
 //		without recursion	
 //		int n1=0, n2 = 1,n3=0;
@@ -38,8 +36,8 @@ public class FibonacciRecursion {
 	}
 
 	public static void main(String[] args) {
-		int result = fibonacci(6);
-		System.out.println(result);
+		System.out.println("0"); //start printing from 0
+		fibonacci(15);
 	}
 
 }
